@@ -36,30 +36,37 @@ namespace TicketingSystem
                     // Ticket ID
                     Console.WriteLine("What is the ticket ID?");
 
+                    string ticket = Console.ReadLine();
                     // Summary of ticket
                     Console.WriteLine("Enter a summary for the ticket.");
 
+                    string summary = Console.ReadLine();
                     // Status of ticket
                     Console.WriteLine("What is the status of the ticket?");
 
+                    string status = Console.ReadLine();
                     // Priority of ticket
                     Console.WriteLine("What is the priority of the ticket?");
 
+                    string priority = Console.ReadLine();
                     // Submitted ticket
                     Console.WriteLine("Who submitted the ticket?");
 
+                    string submit = Console.ReadLine();
                     // Ticket assigned
                     Console.WriteLine("Who is the ticket assigned to?");
 
-                    // Watching ticket
-                    Console.WriteLine("How many people are watching the ticket?");
-
+                    string assigned = Console.ReadLine();
                     
-                    for (int i = 0; i < 7; i++)
-                    {
-                        Console.WriteLine("Who is watching the ticket?");
-                    }
-                }
+                    // Watching ticket
+                    Console.WriteLine("Who is watching the ticket?");
+
+                    string watch = Console.ReadLine();
+                    
+                    sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", ticket, summary, status, priority, submit, assigned, watch);
+                    
+                    sw.Close();
+                }  
 
             } while (option == "1" || option == "2");
         }
