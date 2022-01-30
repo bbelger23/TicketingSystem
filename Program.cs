@@ -25,7 +25,17 @@ namespace TicketingSystem
                     // read data from file
                     if (File.Exists(file))
                     {
-
+                        StreamReader sr = new StreamReader(file);
+                        while (!sr.EndOfStream)
+                        {
+                            string line = sr.ReadLine();
+                            Console.WriteLine(line);
+                        }
+                        sr.Close();
+                    }
+                    else
+                    {
+                        Console.WriteLine("File does not exist");
                     }
                 }
                 else if (option == "2")
@@ -63,6 +73,7 @@ namespace TicketingSystem
 
                     string watch = Console.ReadLine();
                     
+                    sw.WriteLine("TicketID,Summary,Status,Priority,Submitter,Assigned,Watching");
                     sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", ticket, summary, status, priority, submit, assigned, watch);
                     
                     sw.Close();
