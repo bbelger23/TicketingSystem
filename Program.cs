@@ -72,9 +72,38 @@ namespace TicketingSystem
                     Console.WriteLine("Who is watching the ticket?");
 
                     string watch = Console.ReadLine();
+
+                    string watching = watch;
+
+                    Console.WriteLine("Is anyone else watching?");
+
+                    string resp = Console.ReadLine().ToUpper();
+
+                    if (resp == "Y")
+                    {
+                        Console.WriteLine("Who is watching the ticket?");
+
+                        watch = Console.ReadLine();
+
+                        watching += "|" + watch; 
+                    }
                     
+                    Console.WriteLine("Is anyone else watching?");
+
+                    resp = Console.ReadLine().ToUpper();
+
+                    if (resp == "Y")
+                    {
+                        Console.WriteLine("Who is watching the ticket?");
+
+                        watch = Console.ReadLine();
+
+                        watching += "|" + watch; 
+                    }
+
+
                     sw.WriteLine("TicketID,Summary,Status,Priority,Submitter,Assigned,Watching");
-                    sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", ticket, summary, status, priority, submit, assigned, watch);
+                    sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", ticket, summary, status, priority, submit, assigned, watching);
                     
                     sw.Close();
                 }  
